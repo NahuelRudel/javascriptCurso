@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    display: inline-block;
+    border-bottom: 2px solid;
+    margin-left: 30px;
+}
+
+h3 {
+    font-size: 2rem;
+    display: inline-block;
+    border-bottom: 2px solid;  
+    margin-left: 30px
+}
+
+.collection {
+    font-size: 1.1rem;
+    margin-left: 15px;
+}
+
+.collection li {
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.collection li:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.collection-carrito {
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+.collection-carrito li {
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.collection-carrito li:hover {
+    color: #fe7301;
+    text-decoration: underline;
+}
