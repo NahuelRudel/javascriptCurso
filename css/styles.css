@@ -7,23 +7,21 @@ h2 {
     font-size: 2rem;
     display: inline-block;
     border-bottom: 2px solid;
-    margin-left: 30px;
 }
 
 h3 {
     font-size: 2rem;
     display: inline-block;
     border-bottom: 2px solid;  
-    margin-left: 30px
 }
 
 .collection {
     font-size: 1.1rem;
-    margin-left: 15px;
 }
 
 .collection li {
-    margin: 12px 0;
+    margin-top: 12px;
+    margin-left: 15px;
     cursor: pointer;
 }
 
@@ -45,4 +43,29 @@ h3 {
 .collection-carrito li:hover {
     color: #fe7301;
     text-decoration: underline;
+}
+
+.linkIndex {
+    margin-top: 50px;
+    font-size: 1rem;
+}
+
+/* Formulario */
+
+.formMain {
+    margin-bottom: 30px;
+}
+
+.formP {
+    font-size: 1.2rem;
+    margin: 10px 0 15px 0;
+    font-weight: 500;
+}
+
+.titulo {
+    margin-top: 10px;
+}
+
+.linkForm {
+    margin-top: 40px;
 }

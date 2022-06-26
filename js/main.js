@@ -31,6 +31,7 @@ cargarProductos()
 function agregarAlCarrito(prod) {
     if (prod.trim() !== "") {
         carrito.push(prod)
+        guardoCarrito()
         const liNuevoProducto = document.createElement("li")
               liNuevoProducto.innerText = prod
               liNuevoProducto.id = prod + "EnCarrito"
@@ -43,8 +44,35 @@ function agregarAlCarrito(prod) {
 function removerDelCarrito(prod) {
     const productoAremover = document.getElementById(`${prod}`)
           productoAremover.remove()
+          item = carrito.indexOf(productoAremover.innerText)
+          if (item >= 0) {
+            carrito.splice(item, 1)
+            guardoCarrito()
+          }
           console.warn(`${prod} ha sido eliminado del carrito.`)
 }
+
+// Guardar carrito en localStorage
+function guardoCarrito() {
+    if (carrito.length > 0) {
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+    }
+}
+
+// Recuperar el carrito desde el localStorage
+function recuperoCarrito() {
+    if (miCarrito = JSON.parse(localStorage.getItem("carrito"))) {
+        miCarrito.forEach(prod => {
+            carrito.push(prod)
+            const liNuevoProducto = document.createElement("li")
+                  liNuevoProducto.innerText = prod
+                  liNuevoProducto.id = prod + "EnCarrito"
+                  liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) }) 
+                  listadoCarrito.append(liNuevoProducto)
+        })
+    }
+}
+recuperoCarrito()
 
 //Crear ID aleatorio
 function creoID() {

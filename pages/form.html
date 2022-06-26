@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Componentes - Usuario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/variablesForm.js"></script>
+    <script defer src="../js/mainForm.js"></script>
+</head>
+<body>
+    <div class="container">
+    <div>
+        <h1 class="titulo">SYSTEM32</h1>
+        <h2>Finalizar pedido</h2>
+    </div>
+    <form action="#" class="formMain">
+        <p class="formP">Ingrese sus datos para enviarle la compra</p>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre">                <label for="inputNombre" class="form-label">Nombre:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="tel" class="form-control" id="inputTelefono" placeholder="Ingrese su teléfono">
+            <label for="inputTelefono" class="form-label">Teléfono:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese su correo electrónico">
+            <label for="inputEmail" class="form-label">Correo Electrónico:</label>
+        </div>
+        <input type="reset" class="btn btn-primary" value="RESETEAR">
+        <input type="submit" class="btn btn-primary" id="submit" value="ENVIAR">          
+    </form>
+    <a href="../index.html">Volver a la página inicial</a>
+    </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
