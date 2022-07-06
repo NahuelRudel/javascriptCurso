@@ -34,7 +34,7 @@ function agregarAlCarrito(prod) {
         guardoCarrito()
         const liNuevoProducto = document.createElement("li")
               liNuevoProducto.innerText = prod
-              liNuevoProducto.id = prod + "EnCarrito"
+              liNuevoProducto.id = prod
               liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) }) 
               listadoCarrito.append(liNuevoProducto)
     }
@@ -49,7 +49,17 @@ function removerDelCarrito(prod) {
             carrito.splice(item, 1)
             guardoCarrito()
           }
-          console.warn(`${prod} ha sido eliminado del carrito.`)
+        Swal.fire({
+            text: `${prod} ha sido eliminado del carrito.`,
+            icon: 'warning',
+            showConfirmButton: false,
+            toast: true,
+            timer: 3000,
+            timerProgressBar: true,
+            position: "bottom-end",
+            background: "#A80000",
+            color: "white"
+          })
 }
 
 // Guardar carrito en localStorage
@@ -66,7 +76,7 @@ function recuperoCarrito() {
             carrito.push(prod)
             const liNuevoProducto = document.createElement("li")
                   liNuevoProducto.innerText = prod
-                  liNuevoProducto.id = prod + "EnCarrito"
+                  liNuevoProducto.id = prod
                   liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) }) 
                   listadoCarrito.append(liNuevoProducto)
         })
@@ -84,16 +94,6 @@ function listarProductos() {
     console.table(productos)
 } 
 
-//Agregar producto al array "productos"
-function agregarProducto() {
-    let id = creoID()
-    let nombre = prompt("Ingresa el nombre del producto:").toUpperCase()
-    let precio = parseInt(prompt("Ingresa el precio:"))
-        productos.push(new Producto(id, nombre, precio))
-    alert("Producto agregado correctamente")
-    cargarProductos()
-}
-
 //Listar todos los nombres de los productos incluidos en el array "productos"
 function listarNombresProductos() {
     productos.forEach((producto)=> { 
@@ -103,22 +103,36 @@ function listarNombresProductos() {
 
 //Buscar el primer producto dentro del array "productos" con la característica ingresada
 function buscarProducto() {
-    let aBuscar = prompt("Ingrese el nombre del producto a buscar:").toUpperCase()
-        let resultado = productos.find((producto)=> producto.nombre.includes(aBuscar))
-        if (resultado !== undefined) {
-            console.clear()
-            console.table(resultado)
-        }
+    (async () => {
+        const { value: productoAbuscar } = await Swal.fire({
+            title: 'Ingresa el producto a buscar',
+            input: 'text',
+            inputLabel: '(En mayúscula)',
+            inputPlaceholder: 'Producto a buscar:'
+          })
+          let resultado = productos.find((producto)=> producto.nombre.includes(productoAbuscar))
+          if (resultado !== undefined) {
+              console.clear()
+              console.table(resultado)
+          }
+    })()      
 }
 
 //Buscar todos los productos dentro del array "productos" con la característica ingresada
 function filtrarProductos() {
-    let aBuscar = prompt("Ingrese el nombre del producto a buscar:").toUpperCase()
-    let resultado = productos.filter((producto)=> producto.nombre.includes(aBuscar))
+    (async () => {
+        const { value: productoAfiltrar } = await Swal.fire({
+            title: 'Ingresa el producto a buscar',
+            input: 'text',
+            inputLabel: '(En mayúscula)',
+            inputPlaceholder: 'Producto a buscar:'
+          })
+        let resultado = productos.filter((producto)=> producto.nombre.includes(productoAfiltrar))
         if (resultado !== undefined) {
             console.clear()
             console.table(resultado)
-        }
+        }       
+    })()   
 }
 
 //Aumentar el precio de todos los productos dentro del array "productos", creando otro array con los nuevos precios 
