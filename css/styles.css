@@ -50,6 +50,11 @@ h3 {
     font-size: 1rem;
 }
 
+.imgProducto {
+    width: 230px;
+    margin-left: 10%;
+}
+
 /* Formulario */
 
 .formMain {

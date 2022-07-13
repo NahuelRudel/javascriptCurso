@@ -1,31 +1,24 @@
-//Llenar automaticamente el array "productos"
-function generadorAutomatico() {
-    productos.push(new Producto(123, "MICRO INTEL CORE I3", 13950))
-    productos.push(new Producto(234, "MICRO INTEL I5", 24590))
-    productos.push(new Producto(345, "MICRO AMD RYZEN 5", 20830))
-    productos.push(new Producto(456, "MICRO AMD RYZEN 7", 32740))
-    productos.push(new Producto(567, "PLACA DE VIDEO GTX 1660", 67820))
-    productos.push(new Producto(678, "PLACA DE VIDEO GTX 1050 TI", 59500))
-    productos.push(new Producto(789, "RAM 8GB 3200MHZ KINGSTON", 8380))
-    productos.push(new Producto(890, "RAM 32GB 4800MHZ VIPER", 27800))
-    productos.push(new Producto(901, "TECLADO HYPERX ALLOY ORIGINS", 9490))
-    productos.push(new Producto(012, "TECLADO CORSAIR K60 PRO", 12820))
-}
-generadorAutomatico()
 
-//Cargar el HTML con los productos
-function cargarProductos() {
-    listadoProductos.innerHTML = ""
-    for (const producto of productos) {
-        const li = document.createElement("li") 
-              li.innerText = producto.nombre
-              li.id = producto.id
-              li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
-              listadoProductos.append(li)
-    }
-}
 
-cargarProductos()
+// function cargarProductos() {
+//     listadoProductos.innerHTML = ""
+//     for (const producto of productos) {
+//         const li = document.createElement("li") 
+//               li.innerText = producto.nombre
+//               li.id = producto.id
+//               li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
+//               listadoProductos.append(li)
+//     }
+// }
+
+// cargarProductos()
+
+document.addEventListener("DOMContentLoaded", ()=> {
+    setTimeout(() => {
+        obtenerContenido(URL)      
+    }, 1000);
+ })
+
 
 //Agregar al carrito los productos seleccionados
 function agregarAlCarrito(prod) {
@@ -38,6 +31,17 @@ function agregarAlCarrito(prod) {
               liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) }) 
               listadoCarrito.append(liNuevoProducto)
     }
+    Swal.fire({
+        text: `${prod} se agregó del carrito.`,
+        icon: 'success',
+        showConfirmButton: false,
+        toast: true,
+        timer: 3000,
+        timerProgressBar: true,
+        position: "bottom-end",
+        background: "#47AE2C",
+        color: "white"
+      })
 }
 
 //Quitar del carrito los productos seleccionados

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 123,
+        "nombre": "MICRO INTEL CORE I3",
+        "precio": 13950,
+        "imagen": "./img/intelI3.png"
+    },
+    {
+        "id": 234,
+        "nombre": "MICRO INTEL I5",
+        "precio": 24590,
+        "imagen": "./img/intelI5.png"
+    },
+    {
+        "id": 345,
+        "nombre": "MICRO AMD RYZEN 5",
+        "precio": 20830,
+        "imagen":"./img/ryzen5.png"
+    },
+    {
+        "id": 456,
+        "nombre": "MICRO AMD RYZEN 7",
+        "precio": 32740,
+        "imagen": "./img/ryzen7.png"
+    },
+    {
+        "id": 567,
+        "nombre": "PLACA DE VIDEO GTX 1660",
+        "precio": 67820,
+        "imagen":"./img/gtx1660.png"
+    },
+    {
+        "id": 678,
+        "nombre": "PLACA DE VIDEO GTX 1050 TI",
+        "precio": 59500,
+        "imagen":"./img/gtx1050ti.png"
+    },
+    {
+        "id": 789,
+        "nombre": "RAM 8GB 3200MHZ KINGSTON",
+        "precio": 8380,
+        "imagen":"./img/ram8king.png"
+    },
+    {
+        "id": 890,
+        "nombre": "RAM 32GB 4800MHZ VIPER",
+        "precio": 27800,
+        "imagen":"./img/ram32viper.png"
+    },
+    {
+        "id": 901,
+        "nombre": "TECLADO HYPERX ALLOY ORIGINS",
+        "precio": 9490,
+        "imagen":"./img/hyperxAlloy.png"
+    },
+    {
+        "id": 902,
+        "nombre": "TECLADO CORSAIR K60 PRO",
+        "precio": 12820,
+        "imagen":"./img/corsairk60.png"
+    }
+]
