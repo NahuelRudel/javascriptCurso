@@ -25,6 +25,11 @@ h1 {
     object-fit: cover;
     margin-left: 5%;
 }
+.imgProduct:hover {
+    width: 92%;
+    transition-property: width;
+    transition-duration: 0.3s;
+    cursor: pointer; }
 
 #cards {
     display: flex;
